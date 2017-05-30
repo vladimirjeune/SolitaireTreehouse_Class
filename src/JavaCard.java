@@ -1,13 +1,13 @@
 /**
  * Created by vladimirjeune on 5/29/17.
  */
-public class Card {
+public class JavaCard {
 
     private final int value;
     private final String suit;
     private boolean faceUp;
 
-    public Card(int value, String suit, boolean faceUp) {
+    public JavaCard(int value, String suit, boolean faceUp) {
         this.value = value;
         this.suit = suit;
         this.faceUp = faceUp;
