@@ -1,13 +1,9 @@
 /**
  * Created by vladimirjeune on 5/29/17.
  */
-class Card (value: Int, suit: String, faceUp: Boolean) {
-    val value: Int = 0  // Or, we could just do this.
-    val suit: String = ""
-    var faceUp: Boolean = false
+class Card (val value: Int, val suit: String, var faceUp: Boolean) {
 
-    init {
-        // Just an example that you can use init.  Not needed here.
-    }
+    // In order to get this to one line add val|var in front of
+    // Ctor parameters.  Later we can even delete the brackets.
 
 }
