@@ -3,5 +3,7 @@
  */
 class Card {
     val value: Int = 0  // Or, we could just do this.
+    val suit: String = ""
+    var faceUp: Boolean = false
 
 }
