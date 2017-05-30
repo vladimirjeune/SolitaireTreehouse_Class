@@ -3,8 +3,6 @@
  */
 class Card {
     val value: Int
-    get() {  // If there is no value for property; it is an error
-        return 0  // There are no default values in Kotlin.
-    }
+    get() = 0  // Function only contained 1 expr, so can write like this.
 
 }
