@@ -3,11 +3,7 @@
  */
 
 // You can define either whole function here, or anon fn, or lambda in Array ctor
-val cards: Array<Card> = Array(52,
-         { i->
-             Card(i % 13, getSuit(i))
-        }  // RM'd fun decl and return, then added back param by saying i-> inside {}
-)
+val cards: Array<Card> = Array(52, { i -> Card(i % 13, getSuit(i)) })
 
 fun getSuit(i: Int): String = when(i / 13) {  // Function was just one expr so just used '='. Now Anon
         0 -> "Clubs"
