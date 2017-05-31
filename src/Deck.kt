@@ -9,7 +9,7 @@ val cards: Array<Card> = Array(52,
         }
 )
 
-fun getSuit(i: Int): String = when(i / 13) {  // Function was just one expr so just used '='
+fun getSuit(i: Int): String = when(i / 13) {  // Function was just one expr so just used '='. Now Anon
         0 -> "Clubs"
         1 -> "Diamonds"
         2 -> "Hearts"
