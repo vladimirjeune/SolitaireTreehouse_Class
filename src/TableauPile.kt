@@ -9,7 +9,7 @@ class TableauPile(var cards: MutableList<Card> = mutableListOf()) {  // Start wi
         }
     }
 
-    fun addCard(newCards: MutableList<Card>) :Boolean {
+    fun addCards(newCards: MutableList<Card>) :Boolean {
         if (cards.size > 0) {  // Tableau Pile is not empty
             if ((newCards.first().value == cards.last().value - 1)
                     && (suitCheck(newCards.first(), cards.last()))) {
