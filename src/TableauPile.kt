@@ -23,7 +23,7 @@ class TableauPile(var cards: MutableList<Card> = mutableListOf()) {  // Start wi
         return false
     }
 
-    fun removeCard(tappedIndex: Int) {
+    fun removeCards(tappedIndex: Int) {
         for (i in tappedIndex..cards.lastIndex ) {
             cards.removeAt(i)
         }
