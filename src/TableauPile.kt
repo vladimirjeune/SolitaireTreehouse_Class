@@ -1,10 +1,12 @@
 /**
  * Created by vladimirjeune on 6/1/17.
  */
-class TableauPile(var cards: MutableList<Card>) {
+class TableauPile(var cards: MutableList<Card> = mutableListOf()) {  // Start with mt list
 
     init {
-        cards.last().faceUp = true  // The last card in deck is to be face up
+        if (cards.size > 0) {
+            cards.last().faceUp = true  // The last card in deck is to be face up
+        }
     }
 
     fun addCard(newCards: MutableList<Card>) :Boolean {
@@ -19,6 +21,15 @@ class TableauPile(var cards: MutableList<Card>) {
             return true
         }
         return false
+    }
+
+    fun removeCard(tappedIndex: Int) {
+        for (i in tappedIndex..cards.lastIndex ) {
+            cards.removeAt(i)
+        }
+        if (cards.size > 0) {  // Make sure the last card, if exists, is face up
+            cards.last().faceUp = true
+        }
     }
 
     /**
