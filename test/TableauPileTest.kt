@@ -27,7 +27,7 @@ class TableauPileTest {
                 Card(4, clubs),
                 Card(3, diamonds),
                 Card(2, spades)
-        ))
+        ))  // Remember that the numbering is off by one
 
         // act
         tableauPile.removeCards(1)
