@@ -15,9 +15,8 @@ class GameModel {
     fun resetGames() {
         wastePile.clear()
 
-        for (pile in foundationPiles) {  // Way #1 of resetting foundationPiles
-            pile.reset()
-        }
+    // Also acceptable: foundationPiles.forEach( { it.reset() } )  // same meaning; shows lamnda just a param
+    foundationPiles.forEach { it.reset() }
 
 
     }
