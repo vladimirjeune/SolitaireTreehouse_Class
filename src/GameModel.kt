@@ -54,6 +54,33 @@ class GameModel {
         }
     }
 
+    fun onTableauTap(tableauIndex: Int, cardIndex: Int) {
+        val tableauPile = tableauPiles[tableauIndex]
+        if (tableauPile.cards.size > 0) {  // Make sure not empty
+            val cards = tableauPile.cards.subList(cardIndex
+                    , tableauPile.cards.lastIndex + 1)  // Returns list (].  lastIndex= ext prpty.  only goes to last place
+            // Play cards, if so, then rm
+            if (playCards(cards)) {
+                // Successfully played
+                tableauPile.removeCards(cardIndex)
+            }
+        }
+    }
+
+    private fun  playCards(cards: MutableList<Card>): Boolean {
+        // Case where there is only 1 card in list
+        if (cards.size == 1) {
+            return playCard(cards.first())
+        } else {  // Try adding those cards to ea TabPile to find a match
+            tableauPiles.forEach {
+                if (it.addCards(cards)) {  // TableauPiles takes mutableList
+                    return true
+                }
+            }
+        }
+        return false  // No match found
+    }
+
     private fun  playCard(card: Card): Boolean {
         foundationPiles.forEach {
             if ( it.addCard(card)) {  // If we can do this we have found a match
