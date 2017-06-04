@@ -14,11 +14,23 @@ class GamePresenter {
     // Note we do not have access to model.  So will make GameModel a Singleton, since ONLY 1 game/time.
     fun onDeckTap() {
         GameModel.onDeckTap()
-        view?.update(GameModel)  // Kotlin needs to remind you about view could be null.  Add ?. to nullable var
+        view?.update()  // Kotlin needs to remind you about view could be null.  Add ?. to nullable var
     }
 
     fun onWasteTap() {
         GameModel.onWasteTap()
-        view?.update(GameModel)
+        view?.update()
     }
+
+    fun onFoundationTap(foundationIndex: Int) {
+        GameModel.onFoundationTap(foundationIndex)
+        view?.update()
+    }
+
+    fun onTableauTap(tableauIndex: Int, cardIndex: Int) {
+        GameModel.onTableauTap(tableauIndex, cardIndex)
+        view?.update()
+    }
+
+
 }
