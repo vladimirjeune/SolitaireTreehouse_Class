@@ -20,8 +20,5 @@ class GameModel {
 
     }
 }
-    fun String.isLongerThan5(): Boolean {
-        return this.length > 5
-    }
 
 
