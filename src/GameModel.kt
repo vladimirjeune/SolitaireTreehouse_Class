@@ -35,6 +35,40 @@ class GameModel {
         }
     }
 
+    fun onWasteTap() {
+        if (wastePile.size > 0) {
+            val card = wastePile.last()
+            if (playCard(card)) {  // If this card is playable we will play it
+                wastePile.remove(card)
+            }
+        }
+    }
+
+    fun onFoundationTap(foundationIndex: Int) {
+        val foundationPile = foundationPiles[foundationIndex]
+        if (foundationPile.cards.size > 0) {
+            val card = foundationPile.cards.last()
+            if (playCard(card)) {  // If this card is playable we will play it
+                foundationPile.removeCard(card)
+            }
+        }
+    }
+
+    private fun  playCard(card: Card): Boolean {
+        foundationPiles.forEach {
+            if ( it.addCard(card)) {  // If we can do this we have found a match
+                return true
+            }
+        }
+        tableauPiles.forEach {
+            if (it.addCards(mutableListOf(card))) {  // TableauPiles takes mutableList
+                return true
+            }
+        }
+        return false
+    }
+
+
 }
 
 
