@@ -14,10 +14,14 @@ class GameModel {
 
     fun resetGames() {
         wastePile.clear()
-
         // Also acceptable: foundationPiles.forEach( { it.reset() } )  // same meaning; shows lamnda just a param
         foundationPiles.forEach { it.reset() }
+        deck.reset()
 
+        tableauPiles.forEachIndexed { i, tableauPile ->
+            val cardsInPile: MutableList<Card> = Array(i + 1, {deck.drawCards()}).toMutableList()
+            tableauPiles[i] = TableauPile(cardsInPile)
+        }
     }
 }
 
