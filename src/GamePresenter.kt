@@ -1,7 +1,7 @@
 /**
  * Created by vladimirjeune on 6/4/17.
  */
-class GamePresenter {
+object GamePresenter {
     // Cannot set to null in Kotlin.  You need to add a ? after datatype.  GameView? = null, OK
     // We have to wait for Activity.onCreate b4 we can make view, so mk proprty
     var view: GameView? = null  // Once view created we'll call a function in GamePresenter for proper population of view

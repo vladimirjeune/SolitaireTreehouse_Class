@@ -25,9 +25,9 @@ data class Card (val value: Int, val suit: String, var faceUp: Boolean = false) 
 
     private fun  getSuitChar(suit: String): String = when (suit) {
         diamonds -> "\u2666"
-        diamonds -> "\u2663"
-        diamonds -> "\u2665"
-        diamonds -> "\u2660"
+        clubs -> "\u2663"
+        hearts -> "\u2665"
+        spades -> "\u2660"
         else -> "incorrect suit"
     }
 
