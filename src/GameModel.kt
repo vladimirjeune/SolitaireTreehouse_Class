@@ -95,6 +95,10 @@ object GameModel {
         return false
     }
 
+    fun debugPrint() {
+        println(deck.cardsInDeck.last())  // Print the top of the deck
+    }
+
 
 }
 
